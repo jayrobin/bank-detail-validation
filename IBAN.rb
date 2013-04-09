@@ -7,16 +7,20 @@ def is_valid?(iban)
   iban = iban[4, iban.length - 1] + iban[0, 4]
 
   # replace alpha chars with their respective digits, starting at A=10
-  iban = iban.chars.map do |char|
-  	if char.match(/[A-Z]/)
-  		char.ord - 55
-  	else
-  		char
-  	end
-  end
+  iban = iban.chars.map { |char| char.match(/[A-Z]/) ? char.ord - 55 : char }
 
   # compose integer and return true if mod 97 remainder is 1
-  puts iban.join.to_i % 97 == 1
+  iban.join.to_i % 97 == 1
 end
 
+# valid IBAN
 puts is_valid? "GB82 WEST 1234 5698 7654 32"
+
+# remove character
+puts is_valid? "GB82 WEST 124 5698 7654 32"
+
+# replace character
+puts is_valid? "GB82 WUST 1234 5698 7654 32"
+
+# swap characters
+puts is_valid? "GB82 WEST 1234 5968 7654 32"
