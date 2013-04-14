@@ -5,9 +5,10 @@ A Ruby toolset for validating bank account details, including:
 	* TODO: Format check by country
 	* TODO: Generation from bank code, account number and country
 * SWIFT-BIC
-	* TODO: Format check
+	* Format check
 * ABA Code
-	* TODO: Check digit validation
+  * Length check
+	* Check digit validation
 * Credit card
 	* TODO: Format check by card type
 	* TODO: Luhn algorithm
