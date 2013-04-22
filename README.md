@@ -12,3 +12,5 @@ A Ruby toolset for validating bank account details, including:
 * Credit card
 	* TODO: Format check by card type
 	* TODO: Luhn algorithm
+* Creditor Identifier (see http://wiki.xmldation.com/Support/NVB/Creditor_Identifier_for_NVB)
+	* TODO: Mod-97 check (ISO 7064)
