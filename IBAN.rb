@@ -22,6 +22,8 @@ class IBAN
   def self.get_length_for_country(country_code)
     rules = YAML.load(File.read(File.dirname(__FILE__) + "/iban.yml"))
 
+    raise "Country code not found" unless rules[country_code]
+
     rules[country_code]["length"]
   end
 
@@ -36,5 +38,3 @@ class IBAN
     checked_iban.join.to_i % 97 == 1
   end
 end
-
-puts IBAN.valid? "GB82 WEST 1234 5698 7654 32"
